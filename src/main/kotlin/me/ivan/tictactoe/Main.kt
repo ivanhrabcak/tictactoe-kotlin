@@ -42,7 +42,11 @@ fun main(args: Array<String>) {
                 }
             }
         }
-        ticTacToe.turn(currentPlayer, position)
+        var validTurn: Boolean = ticTacToe.turn(currentPlayer, position)
+        if (!validTurn) {
+            println("That field is already taken.")
+            continue
+        }
         if (currentPlayer == 1) {
             currentPlayer = 2
         }
